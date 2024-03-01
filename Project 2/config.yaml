@@ -1,0 +1,16 @@
+ist:
+  treatment: RXASP # RXASP or RXHEP
+  batch_size: 64                 # or tune.choice([<list values>])
+  val_set_fraction: 0.2            # Size of the validation Set
+ihdp:
+  batch_size: 64                 # or tune.choice([<list values>])
+  val_set_fraction: 0.2            # Size of the validation Set
+model:
+  in_features: 52  # 25 (ihdp) or 52 (ist)
+  hidden_size_shared: 200           # or just tune.grid_search([<list of lists>])
+  hidden_size_indiv: 100        # or just tune.grid_search([<list of lists>])
+  dropout: 0.1                     # or tune.choice([<list values>])
+  init_lr: 1e-4  # or fixed value,e.g. 0.001
+  alpha: 0                  # or tune.grid_search([<list values>])
+  loss_mode: 0                      # or tune.grid_search([<list values>])
+
